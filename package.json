@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/knockout": "^3.4.77",
+    "knockout": "^3.5.1"
+  }
+}

@@ -1,0 +1,62 @@
+@primary-color: #4CAF50;
+@hover-color: #45a049;
+@warning-color: red;
+@button-width: 200px;
+@number-input-width: 50px;
+@container-width: 80%;
+@warning-height: 15vh;
+@warning-top: 85%;
+
+.button {
+  display: block;
+  margin-bottom: 10px; // Add some margin between buttons
+  background-color: @primary-color;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: @button-width; // Set a fixed width for the buttons
+  text-align: center;
+
+  &:hover {
+    background-color: @hover-color;
+  }
+}
+
+.warnign-txt {
+  display: flex;
+  position: fixed; // Fixed positioning
+  width: 95%; // Full width
+  margin: 0; // Remove any default margins
+  z-index: -9999; // Make sure it's on top of other content
+  top: @warning-top;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: @warning-height;
+  align-items: center; // Align items vertically in the container
+  justify-content: center;
+  text-align: center;
+
+  .warn {
+    text-align: center;
+    font-size: 5vh;
+    color: @warning-color;
+  }
+}
+
+.hidden-content {
+  display: none;
+}
+
+.number-input {
+  width: @number-input-width; // Set the desired width
+}
+
+.container {
+  width: @container-width; // Width of the container
+  // max-height: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center; // Center items horizontally
+}

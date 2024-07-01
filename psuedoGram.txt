@@ -1,0 +1,96 @@
+global list char data
+global char check
+
+start(){
+    check = data[0]
+    data.remove[0]
+    if(check == a){
+        return tb()
+    }
+    esle if( check == b){
+        return DNE
+    }
+    else if(check == c){
+        return DNE
+    }
+    else if(check == d){
+        wbp = true
+        winCon += 1
+        return start()
+    }
+    else if(check == e){
+        wbs = true
+        winCon += 1 
+        return start()
+    }
+    else if(check == f){
+        shuff = true
+        return start()
+    }
+    else if(check == g){
+        abs = true
+        scoring = true
+        return start()
+    }
+    else if(check == h){
+        pwr = true
+        scoring = true
+        return start()
+    }
+    else if(check == i and scoring == true){
+        return eb()
+    }
+    else if(check == j){
+        return DNE
+    }
+    else if(check == y and winCon == 1){
+        return Done
+    }
+    else if(check == z){
+        return start()
+    }
+    else(
+        return DNE
+    )
+}
+
+tb(){
+    tbv = true
+    ran = 0 //only first call
+    ran++
+    check = data[0]
+    data.remove[0]
+    if( check == b){
+        check = data[0]
+        data.remove[0]
+        if(check == z){
+            st = true
+            return start()
+        }
+        esle{
+            return DNE
+        }
+    }
+    else if(check == c){
+        nst = true
+        return start()
+    }
+    else if(check == z){
+        if(ran == 1){
+            return tb()
+        }
+        esle{
+            return DNE
+        }
+    }
+}
+
+eb(){
+    ebv = true
+    check = data[0]
+    data.remove[0]
+    if( check == j){
+        te = true
+    }
+    start()
+}

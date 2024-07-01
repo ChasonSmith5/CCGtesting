@@ -1,0 +1,43 @@
+GET http://localhost:5247/rules
+
+###
+GET http://localhost:5247/rules/6
+
+###
+POST http://localhost:5247/rules
+Content-Type: application/json
+
+{
+    "name": "Yu-Gi-Oh",
+    "turnBased": true,
+    "playTurns": false,
+    "playPoints": true,
+    "actionBased": true,
+    "energyBased": true,
+    "multiEnergy": true,
+    "abilities": true,
+    "power": true,
+    "simoPlay": false,
+    "multiLocate": false
+}
+
+###
+PUT http://localhost:5247/rules/2
+Content-Type: application/json
+
+{
+    "name": "Magic The Gathering",
+    "turnBased": true,
+    "playTurns": false,
+    "playPoints": true,
+    "actionBased": true,
+    "energyBased": true,
+    "multiEnergy": true,
+    "abilities": true,
+    "power": true,
+    "simoPlay": false,
+    "multiLocate": false
+}
+
+###
+DELETE http://localhost:5247/rules/2

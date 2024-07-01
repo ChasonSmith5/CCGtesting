@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MarketPage</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.picSection {
+    background-image: url('file:///C:/Users/chason.smith/OneDrive%20-%20KnowledgeLake/Pictures/Saved/cardSpread3.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    filter: grayscale(30%);
+}
+
+.ColSection {
+    background-color: black;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+/* header {
+  background-color: #666;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+} */
+
+.header p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header nav {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a{
+    color: rgb(255, 255, 255);
+}
+
+/* Clear floats after the columns */
+/* section::after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+/* Style the footer */
+
+.largerTxt {
+    font-size: calc(2vw + 1vh); /* Adjust the font size as needed */
+    margin-left: 15vw;
+}
+.largerTxt2 {
+    font-size: calc(4vw + 3vh); /* Adjust the font size as needed */
+    margin-left: 20vw;
+    margin-top: 30vh;
+}
+.navi{
+    font-size: calc(1vw + .75vh);
+    position: absolute;
+    right: 5vw;
+}
+.about{
+    color: white;
+    font-size: calc(1.6vw + .4vh);
+}
+
+.aboutH{
+    margin-top: 0vh;
+    color: white;
+    font-size: calc(2vw + .5vh);
+}
+
+.image1 {
+    margin-left: 13vw; /* Adjust the value as needed */
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the aside takes the full height of its container */
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center align text within the aside */
+    position: relative; /* Ensure the aside is relatively positioned */
+}
+
+/* Style the image */
+.centered img {
+    margin: auto; /* Center the image horizontally */
+    margin-top: 0;
+}
+
+/* Style the paragraph */
+.centered p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+/* @media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+} */
+</style>
+</head>
+<body>
+<section class="picSection">
+ 
+<div class="header">
+<p class="largerTxt" style="color: white;">Card Testing Solved</p>
+<nav class="navi">
+    <ul>
+      <li><a href="MarketPage.htm" style="text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black;">home</a></li>
+      <li><a href="about.htm" style="color: rgb(0, 229, 255); text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black;">about</a></li>
+      <li><a href="prject.htm" style="text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black;">projects</a></li>
+      <li><a href="contact.htm" style="text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black;">contacts</a></li>
+    </ul>
+</nav>
+</div>
+<p class="largerTxt2" style="color: white;">
+    Who Are We? 
+</p>
+</section>
+
+<section class="ColSection">
+    <div style="display: flex;">
+        <aside class="centered" style="width: 50%;">
+            <p style="color: white; font-size: calc(4vw + 2vh);">
+                <br>
+                Democracy<br>Gaming
+            </p>
+            <img src="C:\Users\chason.smith\OneDrive - KnowledgeLake\Pictures\Saved\Chason1.jpg" alt="Energy.com" style="max-width: 100%; max-height: 60vh;" class="image1" id="image1">
+        </aside>
+        <aside style="width: 50%; height: 100vh;">
+            <div>
+                <p class="aboutH">
+                    <br><br><br><br><br>
+                    Values
+                </p>
+                <p class="about">
+                    Democracy Gaming puts the consumer first with the idea that growing our userbase is more important than increasing revenue and that increasing customer satisfaction comes first.
+                </p>
+                <p class="about">
+                    This value comes from both the want to be viewed highly as a company as well as being gamers ourselves and choosing to treat others the way we want to be treated.
+                </p>
+                <p class="about">
+                    Democracy gaming also encourages a culture of creating a future of game developers and problem solvers through showing others the power of learning to make applications and video games and how you can turn your passion into a career.
+                </p>
+            </div>
+        </aside>
+    </div>
+</section>
+<section class="ColSection">
+    <div style="display: flex;">
+        <aside style="width: 50%; height: 100vh;">
+            <div>
+                <p class="aboutH">
+                    <br><br><br><br><br>
+                    Values
+                </p>
+                <p class="about">
+                    Democracy Gaming puts the consumer first with the idea that growing our userbase is more important than increasing revenue and that increasing customer satisfaction comes first.
+                </p>
+                <p class="about">
+                    This value comes from both the want to be viewed highly as a company as well as being gamers ourselves and choosing to treat others the way we want to be treated.
+                </p>
+                <p class="about">
+                    Democracy gaming also encourages a culture of creating a future of game developers and problem solvers through showing others the power of learning to make applications and video games and how you can turn your passion into a career.
+                </p>
+            </div>
+        </aside>
+        <aside class="centered" style="width: 50%; height: 100%;">
+            <p style="color: white; font-size: calc(4vw + 2vh);">
+                <br>
+                Chason Smith
+            </p>
+            <img src="C:\Users\chason.smith\OneDrive - KnowledgeLake\Pictures\Saved\Chason2.jpg" alt="Energy.com" style="max-width: 100%; max-height: 60vh; height: auto;" class="image1" id="image1">
+        </aside>
+    </div>
+</section>
+
+</body>
+</html>

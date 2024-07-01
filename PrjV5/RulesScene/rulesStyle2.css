@@ -1,0 +1,84 @@
+body {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full height of viewport */
+  margin: 0; /* Remove default margin */
+  flex-direction: column; /* Align items vertically */
+}
+
+.button-container {
+  display: grid; /* Set display to grid */
+  grid-template-columns: repeat(2, 0fr); /* 2 columns */
+  grid-gap: 0; /* No gap between grid items */
+  justify-content: center; /* Center align items horizontally */
+  width: 100%;
+}
+.button-set {
+  border: 1px solid #000;
+  padding: 1vw; /* Increased padding for better spacing */
+  display: flex; /* Center align items horizontally */
+  align-items: center; /* Center align items vertically */
+  justify-content: center;
+  width: 18vw; /* Set width to 20vw */
+}
+.button {
+  margin: 0 5px;
+}
+.text-between {
+  margin: 0 5px;
+}
+
+.additional-buttons {
+  width: 100%; /* Set width to auto to fill available space */
+  height: 2vh;
+}
+.container {
+  display: flex; /* Center align items horizontally */
+  align-items: center; /* Center align items vertically */
+  justify-content: center;
+  width: 40vw; /* Set width to 20vw */
+  flex-wrap: wrap;
+}
+.warn {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: auto;
+  color: red;
+}
+
+.databaseOp {
+  width: 9vw;
+}
+
+.get{
+  display: flex;
+  flex-direction: column; /* Displays items vertically */
+  display: none;
+}
+
+.add{
+  display: flex;
+  flex-direction: column; /* Displays items vertically */
+  display: none;
+}
+
+.edit{
+  display: flex;
+  flex-direction: column; /* Displays items vertically */
+  display: none;
+}
+
+.delete{
+  display: flex;
+  flex-direction: column; /* Displays items vertically */
+  display: none;
+}
+
+.selectDB{
+  width: 20vw; /* Set your desired width */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: nowrap; /* Prevent text from wrapping */
+}

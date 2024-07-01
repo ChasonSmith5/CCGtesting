@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "OCpgiZOxhvSUyLXhbpLk8kyKxMREKn8EgXc56fOSDBw=",
+  "Source": "SolvedCCG.Api",
+  "BasePath": "_content/SolvedCCG.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

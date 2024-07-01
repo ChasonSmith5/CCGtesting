@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+<head>
+    <title>CardBalanceTester</title>
+<style>
+    /* body {
+        background-color: blue;
+    } */
+    h1   {color: black;}
+    p    {color: red;}
+
+    .Card {
+        position: relative;
+        color: red;;
+    }
+    
+    .image1 {
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* .image2 {
+        position: absolute;
+        z-index: 2;
+    }
+    .image3 {
+        position: absolute;
+        z-index: 3;
+    } */
+
+    .text1 {
+        position: absolute;
+        transform: translate(-50%, -50%); /* Center the text */
+        color: rgb(255, 0, 76); /* Set text color */
+        font-size: 20px; /* Set font size */
+        font-weight: bold; /* Set font weight */
+        z-index: 2;
+    }
+
+    .text2 {
+        position: absolute;
+        transform: translate(-50%, -50%); /* Center the text */
+        color: rgb(255, 0, 76); /* Set text color */
+        font-size: 20px; /* Set font size */
+        font-weight: bold; /* Set font weight */
+        z-index: 2;
+    }
+
+    .sidebar {
+            width: 200px; /* Adjust width as needed */
+            height: 100vh;
+            background-color: #f4f4f4; /* Background color for the sidebar */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in width */
+            float: left; /* Float the sidebar to the left */
+    }
+
+    hr {
+            border: none; /* Remove default border */
+            border-top: 2px solid #ccc; /* Specify the style of the horizontal line */
+            margin: 20px 0; /* Add margin for spacing */
+    }
+
+    .bigButton {
+        width: 200px; /* Adjust the width as needed */
+        height: 50px; /* Adjust the height as needed */
+        /* Add other styles as needed */
+    }
+
+    
+</style>
+</head>
+<!-- <h1 style="background-color:white;">My First Heading</h1> -->
+<!-- <p style="background-color:white;">My first <br> paragraph.</p> -->
+
+<body>
+    <aside class="sidebar">
+        <!-- Content of your sidebar goes here -->
+        <input type="number" name="name" placeholder="PWR" style="width: 45px;"><br>
+        <input type="number" name="name" placeholder="NRG" style="width: 45px;">
+    </aside>
+    <section style="text-align: center;">
+        <h1 style="margin-bottom: 200px;">P2 Hand</h1>
+        <h2>P2 Energy: 0</h2>
+    </section>
+    <hr>
+    <section style="text-align: center;">
+        <h1 style="margin-bottom: 200px;">P2 Played</h1>
+        <h2>P2 Points: 0</h2>
+    </section>
+    <hr>
+    <section style="text-align: center;">
+        <h1 style="margin-bottom: 200px;">P1 Points: 0</h1>
+        <h2>P1 Played</h2>
+    </section>
+    <hr>
+    <section style="text-align: center;">
+        <h1 style="margin-bottom: 200px;">P1 Energy: 0</h1>
+        <h2>P1 Hand</h2>
+    </section>
+    <hr>
+    <section>
+
+    </section>
+
+    <!-- <div class="Card">
+        <img src="C:\Users\chason.smith\OneDrive - KnowledgeLake\Pictures\Saved\CradProto.png" alt="Energy.com" width="300" height="450" class="image1" id="image1">
+        <p class="text1">0</p>
+        <p class="text2">0</p>
+    </div>   -->
+
+
+    <script>
+        // function myFunction() {
+        //     document.getElementById("demo").style.fontSize = "25px"; 
+        //     document.getElementById("demo").style.color = "red";
+        //     document.getElementById("demo").style.backgroundColor = "yellow";
+        //     document.getElementById("image1").style.left = "100px";
+        //     updateTextPosition();
+        // }
+
+        // Get the position of image1
+        function updateTextPosition() {
+            const image1 = document.querySelector(".image1");
+            const image1Rect = image1.getBoundingClientRect();
+            const image1Left = image1Rect.left;
+            const image1Top = image1Rect.top;
+
+            const text1 = document.querySelector(".text1");
+            text1.style.left = image1Left+58 + 'px';
+            text1.style.top = image1Top-60 + 'px';
+
+            const text2 = document.querySelector(".text2");
+            text2.style.left = image1Left+232 + 'px';
+            text2.style.top = image1Top-50 + 'px';
+        }
+        updateTextPosition();
+    </script>
+
+    <button class="bigButton" type="button" onclick="myFunction()">Start/End</button>
+    <button class="bigButton">Next Round</button>
+    <!-- <button onclick="document.location='default.asp'">HTML Tutorial</button> -->
+    
+</body>
+</html>
