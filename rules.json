@@ -1,0 +1,14 @@
+{
+    "rules": {
+      "turn_based": true,
+      "Play_to_num": false,
+      "play_num_turns": true,
+      "reshuffle": false,
+      "energy": true,
+      "multi_energy": false,
+      "simo_turn": true,
+      "non_simo": false,
+      "abillities": true,
+      "power": true
+    }
+  }

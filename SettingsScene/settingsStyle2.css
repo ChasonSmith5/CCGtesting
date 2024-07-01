@@ -1,0 +1,176 @@
+  /* Reset styles for better consistency */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Full-height container */
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 100% of the viewport height */
+  }
+  
+  /* Top bar */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh; /* 10% of viewport height */
+    border: 1px solid black; /* small border */
+  }
+  
+  /* Bottom bar */
+  .bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh; /* 10% of viewport height */
+    border: 1px solid black; /* small border */
+  }
+
+  /* Left, Center, Right sections */
+  .left, .center, .right {
+    flex: 1; /* Equal width */
+    height: 100%;
+    border: 1px solid black; /* small border */
+  }
+
+  .leftT, .centerT, .rightT, .leftMost {
+    flex: 1; /* Equal width */
+    height: 100%;
+    border: 1px solid black; /* small border */
+  }
+
+  .leftB, .centerB, .rightB {
+    flex: 1; /* Equal width */
+    height: 100%;
+    border: 1px solid black; /* small border */
+  }
+
+  /* Middle section */
+  .middle {
+    display: flex;
+    flex-direction: row;
+    flex: 1; /* Takes remaining space */
+  }
+  .middle .center {
+    position: relative;
+    overflow-y: auto;
+  }
+  .middle .center .additional-text {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  .middle .left {
+    position: relative;
+    overflow-y: auto;
+  }
+  .middle .left .additional-text {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  .middle .right {
+    position: relative;
+    overflow-y: auto;
+  }
+  .middle .right .additional-text {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  .middle .leftMost{
+    position: relative;
+    overflow-y: auto;
+  }
+  .middle .leftMost .additional-text {
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+    flex-direction: column; 
+  }
+  .button {
+  display: block;
+  margin-bottom: 10px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 200px;
+  text-align: center;
+}
+.button:hover {
+  background-color: #45a049;
+}
+.warnign-txt .warn {
+  text-align: center;
+  font-size: 2vh;
+  color: red;
+}
+.hidden-content {
+  display: none;
+}
+.number-input {
+  width: 50px;
+}
+.p1in{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.p2in{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.etin{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column;
+}
+.ain{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+#options {
+  padding: 0.5em;
+  border-radius: 0.5em;
+
+  background-color: var(--lighter-primary-color);
+}
+#options h4 {
+  margin: 0.25em;
+  text-align: center;
+}
+
+.input-container {
+  margin-top: 0.50em;
+  margin-bottom: 0.50em;
+}
+
+#options label {
+  font-size: small;
+}
+.ablpic{
+  width: 150px; /* Set your desired width */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
