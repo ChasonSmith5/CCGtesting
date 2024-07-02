@@ -15,9 +15,9 @@ export async function getRules() {
 }
 
 export async function getRulesById(id: number) {
-    var responseString = 'http://localhost:5247/rules/' + id.toString();
+    var responseString = 'api/rules/' + id.toString();
     console.log(responseString);
-    const response = await fetch('http://localhost:5247/rules/' + id.toString(), {
+    const response = await fetch('api/rules/' + id.toString(), {
         method: 'GET',
         headers: {
             'Accept': 'application/json'
@@ -33,7 +33,7 @@ export async function getRulesById(id: number) {
 }
 
 export async function addRules(ruleData: any) {
-    const response = await fetch('http://localhost:5247/rules', {
+    const response = await fetch('api/rules', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -48,7 +48,7 @@ export async function addRules(ruleData: any) {
 }
 
 export async function editRules(ruleData: any, id: number) {
-    const response = await fetch('http://localhost:5247/rules/' + id.toString(), {
+    const response = await fetch('api/rules/' + id.toString(), {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
@@ -63,7 +63,7 @@ export async function editRules(ruleData: any, id: number) {
 }
 
 export async function deleteRules(id: number) {
-    const response = await fetch('http://localhost:5247/rules/' + id.toString(), {
+    const response = await fetch('api/rules/' + id.toString(), {
         method: 'DELETE',
         headers: {
             'Accept': 'application/json'

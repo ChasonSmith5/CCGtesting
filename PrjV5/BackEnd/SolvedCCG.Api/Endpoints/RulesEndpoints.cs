@@ -18,11 +18,11 @@ public static class RulesEndpoints
         var group = app.MapGroup("rules").WithParameterValidation();
 
         //GET rules
-        group.MapGet("/", async (SolvedCCGContext dbContext) =>
+        group.MapGet("/api/", async (SolvedCCGContext dbContext) =>
             await dbContext.Rules.Select(rule => rule.ToRuleDto()).AsNoTracking().ToListAsync());
 
         //GET rules #
-        group.MapGet("/{id}", async (int id, SolvedCCGContext dbContext) => 
+        group.MapGet("/api/{id}", async (int id, SolvedCCGContext dbContext) => 
         {
             GameRule? rule = await dbContext.Rules.FindAsync(id);
 
@@ -42,7 +42,7 @@ public static class RulesEndpoints
         });
 
         //PUT rules
-        group.MapPut("/{id}", async (int id, UpdateRuleDto updatedRule, SolvedCCGContext dbContext) =>
+        group.MapPut("/api/{id}", async (int id, UpdateRuleDto updatedRule, SolvedCCGContext dbContext) =>
         {
             var existingRule = await dbContext.Rules.FindAsync(id);
 
@@ -57,7 +57,7 @@ public static class RulesEndpoints
         });
 
         //DELETE rules #
-        group.MapDelete("/{id}", async (int id, SolvedCCGContext dbContext) =>
+        group.MapDelete("/api/{id}", async (int id, SolvedCCGContext dbContext) =>
         {
             await dbContext.Rules.Where(rule => rule.Id == id).ExecuteDeleteAsync();
 
