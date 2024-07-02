@@ -1,5 +1,5 @@
 export async function getRules() {
-    const response = await fetch('http://localhost:5247/rules', {
+    const response = await fetch('api/rules', {
         method: 'GET',
         headers: {
             'Accept': 'application/json'
