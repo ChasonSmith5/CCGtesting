@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SolvedCCG.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5299f7bef7ece977bc17f14cb1306e28315e304")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4bd92c8fc984bb0884ad85e6ddbe17e49596bdc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SolvedCCG.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SolvedCCG.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

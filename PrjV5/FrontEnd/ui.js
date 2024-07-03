@@ -76,7 +76,7 @@ class UpdateUI {
         this.contentChecker = document.getElementById("act1");
         if (this.contentChecker)
             this.contentChecker.style.display = 'none';
-        this.contentChecker = document.getElementById("act1");
+        this.contentChecker = document.getElementById("act2");
         if (this.contentChecker)
             this.contentChecker.style.display = 'none';
         this.contentChecker = document.getElementById("e5");
@@ -91,7 +91,7 @@ class UpdateUI {
         this.contentChecker = document.getElementById("act1");
         if (this.contentChecker)
             this.contentChecker.style.display = 'none';
-        this.contentChecker = document.getElementById("act1");
+        this.contentChecker = document.getElementById("act2");
         if (this.contentChecker)
             this.contentChecker.style.display = 'none';
     }
