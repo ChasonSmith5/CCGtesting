@@ -126,3 +126,13 @@ C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5
 C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\obj\Release\net8.0\SolvedCCG.Api.pdb
 C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\obj\Release\net8.0\SolvedCCG.Api.genruntimeconfig.cache
 C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\obj\Release\net8.0\ref\SolvedCCG.Api.dll
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\appsettings.json
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\SolvedCCG.Api.deps.json
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\SolvedCCG.Api.runtimeconfig.json
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\web.config
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\publish\web.config
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\publish\appsettings.Development.json
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\publish\appsettings.json
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\publish\SolvedCCG.Api.deps.json
+C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish\publish\SolvedCCG.Api.runtimeconfig.json

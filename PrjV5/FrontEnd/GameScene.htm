@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Window Background Image</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="gameStyle2.css">
+<body>
+<p class="over-all" id="winTxt"></p>
+<!-- <section class="container"> -->
+<div class="TopNrgMult">
+    <div class="image-container" id="energy1">
+        <img src="rst.png" alt="Image 1">
+        <p id = "e1">1</p>
+    </div>
+    <div class="image-container" id="energy2">
+        <img src="ost.png" alt="Image 2">
+        <p id = "e2">1</p>
+    </div>
+    <div class="image-container" id="energy3">
+        <img src="yst.png" alt="Image 3">
+        <p id = "e3">1</p>
+    </div>
+    <div class="image-container" id="energy4">
+        <img src="gst.png" alt="Image 4">
+        <p id = "e4">1</p>
+    </div>
+    <div class="image-container" id="energy5">
+        <img src="bst.png" alt="Image 5">
+        <p id = "e5">1</p>
+    </div>
+    <div class="image-container" id="energy6">
+        <img src="pst.png" alt="Image 6">
+        <p id = "e6">1</p>
+    </div>
+    <div class="image-container" id="act2">
+      <img src="act.png" alt="Image 6">
+      <p id = "a2">1</p>
+    </div>
+</div>
+<section class="container">
+  <div class="hand_border-box2" id="hand-container2">
+    <div data-bind="foreach: p2HandCards" class="card_hand" id="p2Hand">
+      <!-- cards here -->
+        <!-- <div class="card-container">
+          <div class="image-wrapper">
+            <img class="card-image" alt="Image 1" src="../../card3_0.png" id="card-image" style="width: 100%; height: auto;">
+            <div class="child-image1">
+              <img alt="Child Image" src="../../rst.png">
+              <div class="card-cost">0</div>
+            </div>
+            <div class="child-image2">
+              <img alt="Child Image" src="../../fireCir.png">
+              <div class="card-power" id="card-power6">0</div>
+            </div>
+          </div>
+        </div> -->
+    </div>
+  </div>
+    <div class="container_img_box">
+      <div class="border-boxp2" id="border-box2">
+        <div class="card_hand" id="p2Played">
+          <!-- cards here -->
+        </div>
+      </div>
+      <div class="fire_img">
+          <div class="image-container_no_spin">
+              <img src="fireCir.png" alt="fire1">
+              <div class="pts" id="p2Points">0</div>
+          </div>
+      </div>
+    </div>
+    <div class="container_img_box">
+      <div class="border-boxp1" id="border-box1">
+        <div class="card_hand" id="p1Played">
+          <!-- cards here -->
+        </div>
+      </div>
+      <div class="fire_img">
+        <div class="image-container_no_spin">
+          <img src="fireCir.png" alt="fire1">
+          <div class="pts" id="p1Points">0</div>
+        </div>
+      </div>
+    </div>
+      <div class="hand_border-box1" id="hand-container1">
+        <div class="card_hand" id="p1Hand">
+          <!-- cards here -->
+        </div>
+      </div>
+</section>
+  <div class="BottomNrgMult">
+      <div class="image-container" id="energy7">
+          <img src="rst.png" alt="Image 1">
+          <p id = "e7">1</p>
+      </div>
+      <div class="image-container" id="energy8">
+          <img src="ost.png" alt="Image 2">
+          <p id = "e8">1</p>
+      </div>
+      <div class="image-container" id="energy9">
+          <img src="yst.png" alt="Image 3">
+          <p id = "e9">1</p>
+      </div>
+      <div class="image-container" id="energy10">
+          <img src="gst.png" alt="Image 4">
+          <p id = "e10">1</p>
+      </div>
+      <div class="image-container" id="energy11">
+          <img src="bst.png" alt="Image 5">
+          <p id = "e11">1</p>
+      </div>
+      <div class="image-container" id="energy12">
+          <img src="pst.png" alt="Image 6">
+          <p id = "e12">1</p>
+      </div>
+      <div class="image-container" id="act1">
+        <img src="act.png" alt="Image 6">
+        <p id = "a1">1</p>
+      </div>
+</div>
+<div class = "btn-over">
+  <div class="back">
+    <button class="back-btn" id="toRules">Game Rules</button>
+    <button class="back-btn" id="toSettings">Deck Creation</button>
+  </div>
+  <div class="next">
+    <button class="next-btn" id="nextRound">Next Round</button>
+  </div>
+</div>
+<script type="module" src="SceneBuilder.js"></script>
+<script type="module" src="playCards.js"></script>
+<script type="module">
+  import { nextRound, toCreate, toRules} from './gameLogic.js';
+  // Wait for DOMContentLoaded event before calling nextRound
+  document.addEventListener("DOMContentLoaded", function() {
+    // Call nextRound when DOM is fully loaded
+    document.getElementById("nextRound").addEventListener("click", nextRound);
+    document.getElementById("toSettings").addEventListener("click", toCreate);
+    document.getElementById("toRules").addEventListener("click", toRules);
+  });
+</script>
+
+</body>
+</html>
