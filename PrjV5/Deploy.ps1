@@ -1,3 +1,4 @@
+ssh -i ~/SSH/KLInternKey root@159.203.66.87 'kill -9 $(pgrep dotnet)'
 # Frontend Processing
 pushd "C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\FrontEnd"
 tsc
@@ -13,11 +14,12 @@ popd
 
 # Step 1: Publish the .NET project
 pushd "C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api"
-dotnet publish
+dotnet clean
+dotnet publish -r linux-x64 --self-contained
 popd
 
 # Step 2: Change directory to the publish folder
-pushd "C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish"
+pushd "C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\linux-x64"
 
 # Remove existing zip file if it exists
 if (Test-Path -Path files.zip) {
@@ -34,7 +36,7 @@ ssh -i ~/SSH/KLInternKey root@159.203.66.87 -t 'nginx -s reload'
 
 
 
-pushd "C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\publish"
+pushd "C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\BackEnd\SolvedCCG.Api\bin\Release\net8.0\linux-x64"
 scp -i ~/SSH/KLInternKey files.zip root@159.203.66.87:/root/
 popd
 pushd "C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents\GitHub\CCGtesting\PrjV5\FrontEnd"
@@ -44,4 +46,7 @@ popd
 scp -i ~/SSH/KLInternKey mybashscript.sh root@159.203.66.87:/root/
 
 # Step 5: SSH into the remote server and execute the bash script
-ssh -i ~/SSH/KLInternKey root@159.203.66.87 -t 'bash /root/mybashscript.sh'
+# ssh -i ~/SSH/KLInternKey root@159.203.66.87 -t 'bash /root/mybashscript.sh'
+ssh -i ~/SSH/KLInternKey root@159.203.66.87 'chmod +x mybashscript.sh'
+ssh -i ~/SSH/KLInternKey root@159.203.66.87 'nohup bash -c "/root/mybashscript.sh > /root/myscript.log 2>&1 < /dev/null" &'
+# nohup myscript.sh >myscript.log 2>&1 </dev/null &

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install zip utility if not already installed
-apt-get update
+# apt-get update
 apt-get install -y zip
 
 # Define directories and files
@@ -43,4 +43,4 @@ fi
 # Ensure dotnet is added to the PATH or specify full path to dotnet
 export PATH="$PATH:/usr/share/dotnet"
 cd "$BACKEND_DIR"
-dotnet SolvedCCG.Api.dll --urls "http://*:8080"
+dotnet SolvedCCG.Api.dll --urls "http://127.0.0.1:5500"

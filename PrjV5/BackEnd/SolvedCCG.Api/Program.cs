@@ -16,12 +16,14 @@ builder.Services.AddCors(options =>
                    .AllowAnyHeader()
                    .AllowAnyMethod();
         });
+    options.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
 });
 
 var app = builder.Build();
 
 // Use CORS middleware
 app.UseCors("159.203.66.87");
+app.UseCors(options => options.AllowAnyOrigin());
 
 app.MapRulesEndpoints();
 
