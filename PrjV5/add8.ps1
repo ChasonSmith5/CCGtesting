@@ -1,3 +1,2 @@
-pushd "C:\Users\chason.smith\OneDrive - KnowledgeLake\Documents"
-scp -i ~/SSH/KLInternKey dotnet-sdk-8.0.302-linux-x64.tar.gz root@159.203.66.87:/root/
-popd
+scp -i ~/SSH/KLInternKey default root@159.203.66.87:/etc/nginx/sites-enabled
+ssh -i ~/SSH/KLInternKey root@159.203.66.87 -t 'nginx -s reload'

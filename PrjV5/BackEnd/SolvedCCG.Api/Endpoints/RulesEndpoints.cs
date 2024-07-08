@@ -15,7 +15,7 @@ public static class RulesEndpoints
     
     public static RouteGroupBuilder MapRulesEndpoints(this WebApplication app)
     {
-        var group = app.MapGroup("/api/rules").WithParameterValidation();
+        var group = app.MapGroup("/rules").WithParameterValidation();
 
         //GET rules
         group.MapGet("/", async (SolvedCCGContext dbContext) =>

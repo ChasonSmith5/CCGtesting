@@ -1,5 +1,5 @@
 //http://localhost:5247 or api
-var connectionMode = 'api';
+var connectionMode = 'http://localhost:5247';
 export async function getRules() {
     const response = await fetch(connectionMode + '/rules', {
         method: 'GET',

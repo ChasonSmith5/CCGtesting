@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 //http://localhost:5247 or api
-var connectionMode = 'api';
+var connectionMode = 'http://localhost:5247';
 export function getRules() {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch(connectionMode + '/rules', {

@@ -12,13 +12,16 @@
 <div class="container">
 <div class="button-container" data-bind="foreach: buttonSets">
     <div class="button-set">
-        <button data-bind="click: leftButtonClick, style: { backgroundColor: leftButtonColor }">-</button>
-        <span class="text-between" data-bind="text: textBetweenButtons"></span>
-        <button data-bind="click: rightButtonClick, style: { backgroundColor: rightButtonColor }">+</button>
+        <!-- <button data-bind="click: leftButtonClick, style: { backgroundColor: leftButtonColor }">-</button> -->
+        <button class="text-between" data-bind="text: textBetweenButtons, click: toggleFilter, style: { backgroundColor: filterBtn }"></button>
+        <!-- <button data-bind="click: rightButtonClick, style: { backgroundColor: rightButtonColor }">+</button> -->
     </div>
 </div>
-    <button class="additional-buttons" id="ClearFilters">Clear Filters</button>
-    <button class="additional-buttons" id="settings">Go To Settings</button>
+</div>
+<div class ="container">
+            <button class="clear-filters" id="ClearFilters">Clear Filters</button>
+            <button class="clear-filters" id="settings">Go To Settings</button>
+</div>
     <div>
         <button class="databaseOp" id="getB">Get a Rule</button>
         <button class="databaseOp" id="addB">Add a Rule</button>
@@ -52,7 +55,6 @@
         <button id="deleteDB">Delete</button>
     </div>
     <p class="warn" id="warn" data-bind="text: warningMessage"></p>
-</div>
 <script>
     function generateRandomString(length) {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

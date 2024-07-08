@@ -3,45 +3,60 @@ export var variableValues = [];
 function ButtonSetViewModel(this: any, textBetweenButtons: string) {
     const self = this;
 
-    self.leftButtonColor = ko.observable('gray');
-    self.rightButtonColor = ko.observable('gray');
+    // self.leftButtonColor = ko.observable('gray');
+    // self.rightButtonColor = ko.observable('gray');
     self.variableValue = ko.observable(null);
     self.textBetweenButtons = ko.observable(textBetweenButtons);
+    self.filterBtn = ko.observable('red');
 
     // Subscribe to variableValue changes to update button color
     self.variableValue.subscribe(function(newValue: boolean) {
         if (newValue === true) {
-            self.leftButtonColor('gray');
-            self.rightButtonColor('green');
+            // self.leftButtonColor('gray');
+            // self.rightButtonColor('green');
+            self.filterBtn('green');
         } else if (newValue === false) {
-            self.leftButtonColor('red');
-            self.rightButtonColor('gray');
+            // self.leftButtonColor('red');
+            // self.rightButtonColor('gray');
+            self.filterBtn('red');
         } else {
-            self.leftButtonColor('gray');
-            self.rightButtonColor('gray');
+            // self.leftButtonColor('gray');
+            // self.rightButtonColor('gray');
+            self.filterBtn('gray');
         }
     });
 
-    self.leftButtonClick = function() {
-        if (self.leftButtonColor() === 'red') {
-            self.leftButtonColor('gray');
-            self.variableValue(null);
-        } else {
-            self.variableValue(false);
-            self.leftButtonColor('red');
-            self.rightButtonColor('gray');
-        }
-        logVariableValues();
-    };
+    // self.leftButtonClick = function() {
+    //     if (self.leftButtonColor() === 'red') {
+    //         self.leftButtonColor('gray');
+    //         self.variableValue(null);
+    //     } else {
+    //         self.variableValue(false);
+    //         self.leftButtonColor('red');
+    //         self.rightButtonColor('gray');
+    //     }
+    //     logVariableValues();
+    // };
 
-    self.rightButtonClick = function() {
-        if (self.rightButtonColor() === 'green') {
-            self.rightButtonColor('gray');
-            self.variableValue(null);
+    // self.rightButtonClick = function() {
+    //     if (self.rightButtonColor() === 'green') {
+    //         self.rightButtonColor('gray');
+    //         self.variableValue(null);
+    //     } else {
+    //         self.variableValue(true);
+    //         self.leftButtonColor('gray');
+    //         self.rightButtonColor('green');
+    //     }
+    //     logVariableValues();
+    // };
+
+    self.toggleFilter = function() {
+        if (self.filterBtn() === 'green') {
+            self.filterBtn('red');
+            self.variableValue(false);
         } else {
             self.variableValue(true);
-            self.leftButtonColor('gray');
-            self.rightButtonColor('green');
+            self.filterBtn('green');
         }
         logVariableValues();
     };
@@ -82,14 +97,17 @@ window.addEventListener('DOMContentLoaded', loadButtonSets);
 export function updateButtonColors(buttonSet: any) {
     const value = buttonSet.variableValue();
     if (value === true) {
-        buttonSet.leftButtonColor('gray');
-        buttonSet.rightButtonColor('green');
+        // buttonSet.leftButtonColor('gray');
+        // buttonSet.rightButtonColor('green');
+        buttonSet.filterBtn('green');
     } else if (value === false) {
-        buttonSet.leftButtonColor('red');
-        buttonSet.rightButtonColor('gray');
+        // buttonSet.leftButtonColor('red');
+        // buttonSet.rightButtonColor('gray');
+        buttonSet.filterBtn('red');
     } else {
-        buttonSet.leftButtonColor('gray');
-        buttonSet.rightButtonColor('gray');
+        // buttonSet.leftButtonColor('gray');
+        // buttonSet.rightButtonColor('gray');
+        buttonSet.filterBtn('gray');
     }
 }
 
