@@ -10,6 +10,7 @@ FRONTEND_DIR="/var/www/new"
 BACKEND_ZIP="$APP_DIR/files.zip"
 FRONTEND_ZIP="$APP_DIR/htmfiles.zip"
 BACKEND_DIR="$APP_DIR/SolvedCCG.Api"
+DB_FILES="SolvedCCG.db SolvedCCG.db-shm SolvedCCG.db-wal"
 
 # Step 1: Backup current backend and frontend directories
 BACKUP_DIR="/root/backup_$(date +%F_%T)"
@@ -39,7 +40,14 @@ if [ -f "$BACKEND_ZIP" ]; then
   rm "$BACKEND_ZIP"
 fi
 
-# Step 4: Run the .NET application
+# Step 4: Restore database files from backend backup
+if [ -f "$BACKUP_DIR/backend_backup.zip" ]; then
+  for db_file in $DB_FILES; do
+    unzip -j "$BACKUP_DIR/backend_backup.zip" "$BACKEND_DIR/$db_file" -d "$BACKEND_DIR"
+  done
+fi
+
+# Step 5: Run the .NET application
 # Ensure dotnet is added to the PATH or specify full path to dotnet
 export PATH="$PATH:/usr/share/dotnet"
 cd "$BACKEND_DIR"

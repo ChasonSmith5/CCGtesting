@@ -9,6 +9,7 @@ public static class RuleMapping
     {
         return new GameRule()
         {
+            UserExtension = rule.UserExtension,
             Name = rule.Name,
             TurnBased = rule.TurnBased,
             PlayTurns = rule.PlayTurns,
@@ -27,6 +28,7 @@ public static class RuleMapping
     {
         return new(
             rule.Id,
+            rule.UserExtension,
             rule.Name,
             rule.TurnBased,
             rule.PlayTurns,
@@ -46,6 +48,7 @@ public static class RuleMapping
         return new GameRule()
         {
             Id = id,
+            UserExtension = rule.UserExtension,
             Name = rule.Name,
             TurnBased = rule.TurnBased,
             PlayTurns = rule.PlayTurns,

@@ -1,4 +1,4 @@
-import { addRules, deleteRules, editRules, getRules, getRulesById } from "./frontToBack.js";
+import { addRules, deleteRules, editRules, getRules, getRulesById, getRulesByUserExtension } from "./frontToBack.js";
 import { logVariableValues, mainViewModel, updateButtonColors, variableValues } from "./changeFilter.js";
 
 var RuleIDs: number[] = [];
@@ -71,7 +71,7 @@ export function chooseDelete(){
 
 async function fetchAndDisplayRules(id: string, ruleIDs: number[], message: string) {
     try {
-        const rules = await getRules();
+        const rules = await getRulesByUserExtension(window.location.hash.slice(1));
         console.log(rules);
         // Example of how to display the rules
         const rulesList = document.getElementById(id);
@@ -148,6 +148,7 @@ export async function addRule(){
     var RuleName = document.getElementById("ruleName") as HTMLInputElement;
     if(RuleName.value != ""){
         let ruleConfig = {
+            userExtension: window.location.hash.slice(1),
             name: RuleName.value,
             turnBased: mainViewModel.buttonSets()[0].variableValue(),
             playTurns: mainViewModel.buttonSets()[1].variableValue(),
@@ -173,6 +174,7 @@ export async function editRule(){
             var selectedValue = selectedRule.value;
             if(parseInt(selectedValue) > 0){
                 let ruleConfig = {
+                    userExtension: window.location.hash.slice(1),
                     name: RuleName.value,
                     turnBased: mainViewModel.buttonSets()[0].variableValue(),
                     playTurns: mainViewModel.buttonSets()[1].variableValue(),

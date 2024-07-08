@@ -4,6 +4,8 @@ public class GameRule
 {
     public int Id { get; set; }
 
+    public required string UserExtension { get; set; }
+
     public required string Name { get; set; }
 
     public required bool TurnBased { get; set; }

@@ -34,6 +34,25 @@ export async function getRulesById(id: number) {
     return data;
 }
 
+
+export async function getRulesByUserExtension(userExt: string) {
+    var responseString = connectionMode + '/rules/hash/' + userExt;
+    console.log(responseString);
+    const response = await fetch(connectionMode + '/rules/hash/' + userExt, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error(`Failed to fetch: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+}
+
 export async function addRules(ruleData: any) {
     const response = await fetch(connectionMode + '/rules', {
         method: 'POST',

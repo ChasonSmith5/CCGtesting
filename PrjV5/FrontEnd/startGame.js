@@ -11,7 +11,8 @@ export function startTesting() {
         console.log(mainViewModel.p2MadeCards()[0].typ());
         // Navigate to the new page
         setPwrNrgTypValues();
-        window.location.href = 'GameScene.htm';
+        const currentHash = window.location.hash;
+        window.location.href = 'GameScene.htm' + currentHash;
     }
     catch (error) {
         var element = document.getElementById("warn");
@@ -21,5 +22,7 @@ export function startTesting() {
     }
 }
 export function goBack() {
-    window.location.href = 'GameBuild.htm';
+    // Get the current hash fragment
+    const currentHash = window.location.hash;
+    window.location.href = 'index.htm' + currentHash;
 }

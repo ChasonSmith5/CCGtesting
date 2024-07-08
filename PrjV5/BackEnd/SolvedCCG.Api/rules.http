@@ -4,11 +4,16 @@ GET http://localhost:5247/rules
 GET http://localhost:5247/rules/6
 
 ###
+
+GET http://localhost:5247/rules/hash/Yu-Gi-Oh
+
+###
 POST http://localhost:5247/rules
 Content-Type: application/json
 
 {
     "name": "Yu-Gi-Oh",
+    "userExtension": "Yu-Gi-Oh",
     "turnBased": true,
     "playTurns": false,
     "playPoints": true,

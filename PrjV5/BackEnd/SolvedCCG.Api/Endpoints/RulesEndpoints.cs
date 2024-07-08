@@ -30,6 +30,19 @@ public static class RulesEndpoints
         })
         .WithName(GetRuleEndpointName);
 
+        group.MapGet("hash/{userExtension}", async (string userExtension, SolvedCCGContext dbContext) => 
+        {
+            List<GameRule> rules = await dbContext.Rules.AsNoTracking().Where(r => r.UserExtension == userExtension).ToListAsync();
+
+            List<RuleDto> ruleDtos = new List<RuleDto>();  
+            foreach (var rule in rules)
+            {
+                ruleDtos.Add(rule.ToRuleDto()); // Assuming ToRuleDto() method converts GameRule to DTO
+            }
+
+            return ruleDtos is null ? Results.NotFound() : Results.Ok(ruleDtos);
+        });
+
         //POST rules
         group.MapPost("/", async (CreateRuleDto newRule, SolvedCCGContext dbContext) =>
         {

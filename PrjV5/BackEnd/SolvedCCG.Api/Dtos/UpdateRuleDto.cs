@@ -3,6 +3,7 @@
 namespace SolvedCCG.Api.Dtos;
 
 public record class UpdateRuleDto(
+    [Required][StringLength(50)] string UserExtension,
     [Required][StringLength(50)] string Name, 
     [Required] bool TurnBased, 
     [Required] bool PlayTurns, 

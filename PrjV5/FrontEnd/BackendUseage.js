@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { addRules, deleteRules, editRules, getRules, getRulesById } from "./frontToBack.js";
+import { addRules, deleteRules, editRules, getRulesById, getRulesByUserExtension } from "./frontToBack.js";
 import { logVariableValues, mainViewModel, updateButtonColors } from "./changeFilter.js";
 var RuleIDs = [];
 export function chooseGet() {
@@ -76,7 +76,7 @@ export function chooseDelete() {
 function fetchAndDisplayRules(id, ruleIDs, message) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const rules = yield getRules();
+            const rules = yield getRulesByUserExtension(window.location.hash.slice(1));
             console.log(rules);
             // Example of how to display the rules
             const rulesList = document.getElementById(id);
@@ -156,6 +156,7 @@ export function addRule() {
         var RuleName = document.getElementById("ruleName");
         if (RuleName.value != "") {
             let ruleConfig = {
+                userExtension: window.location.hash.slice(1),
                 name: RuleName.value,
                 turnBased: mainViewModel.buttonSets()[0].variableValue(),
                 playTurns: mainViewModel.buttonSets()[1].variableValue(),
@@ -182,6 +183,7 @@ export function editRule() {
                 var selectedValue = selectedRule.value;
                 if (parseInt(selectedValue) > 0) {
                     let ruleConfig = {
+                        userExtension: window.location.hash.slice(1),
                         name: RuleName.value,
                         turnBased: mainViewModel.buttonSets()[0].variableValue(),
                         playTurns: mainViewModel.buttonSets()[1].variableValue(),

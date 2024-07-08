@@ -41,6 +41,23 @@ export function getRulesById(id) {
         return data;
     });
 }
+export function getRulesByUserExtension(userExt) {
+    return __awaiter(this, void 0, void 0, function* () {
+        var responseString = connectionMode + '/rules/hash/' + userExt;
+        console.log(responseString);
+        const response = yield fetch(connectionMode + '/rules/hash/' + userExt, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`Failed to fetch: ${response.statusText}`);
+        }
+        const data = yield response.json();
+        return data;
+    });
+}
 export function addRules(ruleData) {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch(connectionMode + '/rules', {

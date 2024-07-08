@@ -2,6 +2,7 @@
 
 public record class RuleDto(
     int Id, 
+    string UserExtension,
     string Name, 
     bool TurnBased, 
     bool PlayTurns, 

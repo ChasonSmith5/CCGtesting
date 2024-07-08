@@ -19,7 +19,11 @@ export function goToSettings() {
         console.log(check);
         if (check) {
             mainViewModel.warningMessage(""); // Clear the warning message
-            window.location.href = 'DeckBuilder.htm';
+            // Get the current hash fragment
+            const currentHash = window.location.hash;
+            // console.log(currentHash);
+            // Redirect to DeckBuilder.htm with the current hash fragment
+            window.location.href = 'DeckBuilder.htm' + currentHash;
         }
         else {
             mainViewModel.warningMessage("This rule set does not make a supported game");

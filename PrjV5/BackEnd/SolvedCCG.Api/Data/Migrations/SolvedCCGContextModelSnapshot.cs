@@ -16,7 +16,7 @@ namespace SolvedCCG.Api.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
 
-            modelBuilder.Entity("SolvedCCG.Api.Entities.Rule", b =>
+            modelBuilder.Entity("SolvedCCG.Api.Entities.GameRule", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -55,6 +55,10 @@ namespace SolvedCCG.Api.Data.Migrations
 
                     b.Property<bool>("TurnBased")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserExtension")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

@@ -9,10 +9,10 @@ builder.Services.AddSqlite<SolvedCCGContext>(connString);
 // Add CORS services
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("159.203.66.87",
+    options.AddPolicy("AllowSpecificOrigins",
         builder =>
         {
-            builder.WithOrigins("http://127.0.0.1:5500")
+            builder.WithOrigins("http://159.203.66.87", "http://127.0.0.1:5500", "http://localhost", "http://localhost:5247", "http://127.0.0.1:5501")
                    .AllowAnyHeader()
                    .AllowAnyMethod();
         });
@@ -22,7 +22,7 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Use CORS middleware
-app.UseCors("159.203.66.87");
+app.UseCors("AllowSpecificOrigins");
 app.UseCors(options => options.AllowAnyOrigin());
 
 app.MapRulesEndpoints();

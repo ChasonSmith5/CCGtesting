@@ -188,9 +188,11 @@ function start_over(){
 }
 
 export function toCreate(){
-    window.location.href = 'DeckBuilder.htm';
+    const currentHash = window.location.hash;
+    window.location.href = 'DeckBuilder.htm' + currentHash;
 }
 
 export function toRules(){
-    window.location.href = 'GameBuild.htm';
+    const currentHash = window.location.hash;
+    window.location.href = 'index.htm' + currentHash;
 }
