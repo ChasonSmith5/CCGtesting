@@ -19,6 +19,18 @@ body {
   gap: 0vw; /* Adjust spacing between grid items using viewport width */
   width: 100%; /* Make sure it takes the full width of the container */
 }
+.button-container2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2 columns */
+  gap: 0vw; /* Adjust spacing between grid items using viewport width */
+  width: 100%; /* Make sure it takes the full width of the container */
+}
+.button-container3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 columns */
+  gap: 0vw; /* Adjust spacing between grid items using viewport width */
+  width: 100%; /* Make sure it takes the full width of the container */
+}
 .button-set {
   display: flex;
   justify-content: center; /* Center the button horizontally */
@@ -42,6 +54,8 @@ body {
 
 .clear-filters {
   width: 100%;
+  padding: .7vw;
+  text-align: center;
 }
 
 .warn {
@@ -52,37 +66,55 @@ body {
   color: red;
 }
 
-.databaseOp {
-  width: 9vw;
+.label {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: auto;
+  color: rgb(0, 0, 0);
 }
 
+.databaseOp {
+  width: 100%;
+  padding: .7vw;
+  text-align: center;
+}
+.get-cont{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2 columns */
+  gap: 0vw; /* Adjust spacing between grid items using viewport width */
+  width: 100%; /* Make sure it takes the full width of the container */
+}
 .get{
-  display: flex;
-  flex-direction: column; /* Displays items vertically */
+  width: 100%;
   display: none;
 }
 
 .add{
-  display: flex;
-  flex-direction: column; /* Displays items vertically */
+  width: 100%;
   display: none;
 }
 
 .edit{
-  display: flex;
-  flex-direction: column; /* Displays items vertically */
+  width: 100%;
   display: none;
 }
 
 .delete{
-  display: flex;
-  flex-direction: column; /* Displays items vertically */
+  width: 100%;
   display: none;
 }
 
 .selectDB{
-  width: 20vw; /* Set your desired width */
+  width: 100%;
+  padding: .7vw;
+  text-align: center;
   overflow: hidden; /* Hide overflow text */
   text-overflow: ellipsis; /* Add ellipsis for overflowing text */
   white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.dbb{
+  padding: .7vw;
+  text-align: center;
 }

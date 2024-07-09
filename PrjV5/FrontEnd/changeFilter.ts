@@ -5,20 +5,20 @@ function ButtonSetViewModel(this: any, textBetweenButtons: string) {
 
     // self.leftButtonColor = ko.observable('gray');
     // self.rightButtonColor = ko.observable('gray');
-    self.variableValue = ko.observable(null);
+    self.variableValue = ko.observable(false);
     self.textBetweenButtons = ko.observable(textBetweenButtons);
-    self.filterBtn = ko.observable('red');
+    self.filterBtn = ko.observable('gray');
 
     // Subscribe to variableValue changes to update button color
     self.variableValue.subscribe(function(newValue: boolean) {
         if (newValue === true) {
             // self.leftButtonColor('gray');
             // self.rightButtonColor('green');
-            self.filterBtn('green');
+            self.filterBtn('cyan');
         } else if (newValue === false) {
             // self.leftButtonColor('red');
             // self.rightButtonColor('gray');
-            self.filterBtn('red');
+            self.filterBtn('gray');
         } else {
             // self.leftButtonColor('gray');
             // self.rightButtonColor('gray');
@@ -51,12 +51,12 @@ function ButtonSetViewModel(this: any, textBetweenButtons: string) {
     // };
 
     self.toggleFilter = function() {
-        if (self.filterBtn() === 'green') {
+        if (self.filterBtn() === 'cyan') {
             self.filterBtn('red');
             self.variableValue(false);
         } else {
             self.variableValue(true);
-            self.filterBtn('green');
+            self.filterBtn('cyan');
         }
         logVariableValues();
     };
@@ -99,11 +99,11 @@ export function updateButtonColors(buttonSet: any) {
     if (value === true) {
         // buttonSet.leftButtonColor('gray');
         // buttonSet.rightButtonColor('green');
-        buttonSet.filterBtn('green');
+        buttonSet.filterBtn('cyan');
     } else if (value === false) {
         // buttonSet.leftButtonColor('red');
         // buttonSet.rightButtonColor('gray');
-        buttonSet.filterBtn('red');
+        buttonSet.filterBtn('gray');
     } else {
         // buttonSet.leftButtonColor('gray');
         // buttonSet.rightButtonColor('gray');

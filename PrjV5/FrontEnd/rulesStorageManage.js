@@ -3,7 +3,7 @@ export function ClearFilters() {
     localStorage.removeItem("buttonSets");
     for (let i = 0; i < 10; i++) {
         const buttonSet = mainViewModel.buttonSets()[i];
-        const value = null;
+        const value = false;
         buttonSet.variableValue(value);
         updateButtonColors(buttonSet);
     }

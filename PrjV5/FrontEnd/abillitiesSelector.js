@@ -5,9 +5,7 @@ var abillity0 = new abillityInfo();
 export var usersAbillities = [];
 export function setUpAbillitiesUI() {
     if (rulesHandle.abillities == false) {
-        var element = document.getElementById("leftMostTop");
-        element.style.display = 'none';
-        element = document.getElementById("leftMostCenter");
+        var element = document.getElementById("ablB");
         element.style.display = 'none';
     }
     else {

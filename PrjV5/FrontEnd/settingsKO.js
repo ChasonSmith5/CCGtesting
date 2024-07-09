@@ -44,6 +44,8 @@ export function MainViewModel() {
     self.warningMessage = ko.observable("");
     self.selectedOption = ko.observable();
     self.selectedOptionText = ko.observable();
+    self.selectedCardIndex1 = ko.observable(0);
+    self.selectedCardIndex2 = ko.observable(0);
     self.updateSelectedOptionText = function () {
         // Get the select element
         var select = document.getElementById('abillitiesPicker');
@@ -52,9 +54,32 @@ export function MainViewModel() {
         // Update the observable with the selected option text
         self.selectedOptionText(selectedText);
     };
+    self.selectCard = function (index) {
+        self.selectedCardIndex(index);
+    };
     self.updateSelectedOptionText();
     self.logVariable = () => {
         console.log(self.p1Cards());
+    };
+    self.increaseCardIndex1 = function () {
+        if (self.selectedCardIndex1() < self.p1Cards() - 1) {
+            self.selectedCardIndex1(self.selectedCardIndex1() + 1);
+        }
+    };
+    self.decreaseCardIndex1 = function () {
+        if (self.selectedCardIndex1() > 0) {
+            self.selectedCardIndex1(self.selectedCardIndex1() - 1);
+        }
+    };
+    self.increaseCardIndex2 = function () {
+        if (self.selectedCardIndex2() < self.p2Cards() - 1) {
+            self.selectedCardIndex2(self.selectedCardIndex2() + 1);
+        }
+    };
+    self.decreaseCardIndex2 = function () {
+        if (self.selectedCardIndex2() > 0) {
+            self.selectedCardIndex2(self.selectedCardIndex2() - 1);
+        }
     };
     // Function to save data to localStorage
     self.saveData = function () {

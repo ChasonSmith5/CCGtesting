@@ -90,20 +90,20 @@ body {
   text-align: center;
 }
 .hand_border-box1 {
-  height: 17vh;
-  margin-top: 0.5em;
+  height: 15vh;
+  margin-top: 0.5vh;
 }
 .hand_border-box2 {
-  height: 17vh;
-  margin-bottom: 0.5em;
+  height: 15vh;
+  margin-bottom: 0.5vh;
 }
 .border-boxp1 {
-  height: 20vh;
-  margin-top: 0.5em;
+  height: 15vh;
+  margin-top: 0.5vh;
 }
 .border-boxp2 {
-  height: 20vh;
-  margin-bottom: 0.5em;
+  height: 15vh;
+  margin-bottom: 0.5vh;
 }
 .fire_img img {
   max-height: 20vh;

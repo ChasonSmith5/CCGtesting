@@ -10,6 +10,9 @@
 </head>
 <body>
 <div class="container">
+    <p class="label">Filters:</p>
+</div>
+<div class="container">
 <div class="button-container" data-bind="foreach: buttonSets">
     <div class="button-set">
         <!-- <button data-bind="click: leftButtonClick, style: { backgroundColor: leftButtonColor }">-</button> -->
@@ -19,42 +22,56 @@
 </div>
 </div>
 <div class ="container">
+    <div class="button-container2">
             <button class="clear-filters" id="ClearFilters">Clear Filters</button>
             <button class="clear-filters" id="settings">Go To Settings</button>
+    </div>
 </div>
-    <div>
-        <button class="databaseOp" id="getB">Get a Rule</button>
-        <button class="databaseOp" id="addB">Add a Rule</button>
-        <button class="databaseOp" id="editB">Edit a Rule</button>
-        <button class="databaseOp" id="deleteB">Delete a Rule</button>
+<div class ="container">
+    <div class="button-container3">
+            <button class="databaseOp" id="getB">Get Rule</button>
+            <button class="databaseOp" id="addB">Add Rule</button>
+            <button class="databaseOp" id="editB">Edit Rule</button>
+            <button class="databaseOp" id="deleteB">Delete Rule</button>
     </div>
 </div>
 <div class="container">
     <div class="get" id="get">
-        <select class="selectDB" id="getOptions">
-            <option value=0>Choose a rule to use</option>
-        </select>
-        <button id="getDB">Get</button>
+        <div class="get-cont">
+            <select class="selectDB" id="getOptions">
+                <option value=0>Choose a rule to use</option>
+            </select>
+            <button class ="dbb" id="getDB">Get</button>
+        </div>
     </div>
     <div class="add" id="add">
-        <input size="31vw" type="text" placeholder="New Name" id="ruleName">
-        <button id="addDB">Add</button>
+        <div class="get-cont">
+            <input class="dbb" type="text" placeholder="New Name" id="ruleName">
+            <button class="dbb" id="addDB">Add</button>
+        </div>
     </div>
     <div class="edit" id="edit">
-        <select class="selectDB" id="editOptions">
-            <option value=0>Choose a rule to edit</option>
-        </select>
-        <input size="31vw" type="text" placeholder="New Name" id="editName">
-        <button id="editDB">Edit</button>
+        <div class="get-cont">
+            <select class="selectDB" id="editOptions">
+                <option value=0>Choose a rule to edit</option>
+            </select>
+            <input class="dbb" type="text" placeholder="New Name" id="editName">
+            <button class="dbb" id="editDB">Edit</button>
+        </div>
         
     </div>
     <div class="delete" id="delete">
-        <select class="selectDB" id="deleteOptions">
-            <option value=0>Choose a rule to delete</option>
-        </select>
-        <button id="deleteDB">Delete</button>
+        <div class="get-cont">
+            <select class="selectDB" id="deleteOptions">
+                <option value=0>Choose a rule to delete</option>
+            </select>
+            <button class="dbb" id="deleteDB">Delete</button>
+        </div>
     </div>
+</div>
+<div class="container">
     <p class="warn" id="warn" data-bind="text: warningMessage"></p>
+</div>
 <script>
     function generateRandomString(length) {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

@@ -7,9 +7,7 @@ export var usersAbillities: any[] = [];
 
 export function setUpAbillitiesUI(){
     if(rulesHandle.abillities == false){
-        var element: any = document.getElementById("leftMostTop");
-        element.style.display = 'none';
-        element = document.getElementById("leftMostCenter")
+        var element: any = document.getElementById("ablB");
         element.style.display = 'none';
     }
     else{

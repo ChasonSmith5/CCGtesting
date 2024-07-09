@@ -9,8 +9,225 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
 </head>
 <body>
+  <div class="container1">
+    <p>Choose What To Edit</p>
+  </div>
+  <div class="container1">
+    <div class="container2">
+      <div class="editOptions">
+        <button class="optionB" id="ablB">Abilities</button>
+        <button class="optionB" id="p1dB">P1 Deck</button>
+        <button class="optionB" id="p2dB">P2 Deck</button>
+        <button class="optionB" id="setB">Game Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="ablEdit">
+    <div class="container1">
+      <div class="container2">
+        <div id="ain" class="editAbil">
+          <p class="option">Abilities:</p>
+          <select class="selectOption" data-bind="value: selectedOption, event: { change: updateSelectedOptionText }" id="abillitiesPicker" name="Templates">
+            <option value=0>Choose an abillity to add</option>
+            <option value=1>Add PWR# power to all your other played cards</option>
+            <option value=2>Add PWR# power to all your played NRG# cost cards</option>
+            <option value=3>Your next abillity happens twice</option>
+            <option value=4>The next card Played by your opponent is set to PWR# power</option>
+            <option value=5>Add PWR# power to all your played TYP# type enrgy cards</option>
+        </select>
+          <button class="option" id="addABLBtn">Add</button>
+          <button class="option" id="clrABLBtn">Clear Abilities</button>
+        </div>
+      </div>
+    </div>
+    <div class="container1">
+      <div class="additional-text">
+          <p>Abillity 0: No Abillity</p>
+          <div id="hiddenContent0">
+            <!-- Hello World messages will be displayed here -->
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="p1Edit">
+    <div class="container1">
+      <div class="container2">
+        <div class="editDeck">
+          <p class="option">P1 Deck:</p>
+          <div class="titleIn">
+            <p class="label">P1 # of Cards</p>
+            <input class="input" data-bind="value: p1Cards, event: { input: function(data, event) { addCards1(data, event.target.value); } }" type="number" id="numberInput1" placeholder="P1 # of cards">
+          </div>
+          <button class="option" id="deleteB">Clear P1</button>
+        </div>
+      </div>
+    </div>
+    <div class="container1">
+      <div id="p1DeckHeader">P1 Deck Card <span data-bind="text: selectedCardIndex1() + 1"></span></div>
+    </div>
+    <div class="container1">
+      <button class="cardSelect" id="prevCard1" data-bind="click: decreaseCardIndex1">Previous Card</button>
+      <div class="card-container">
+          <div class="image-wrapper">
+            <img class="card-image" alt="Image 1" src="card3_0.png" id="card-image" style="width: 100%; height: auto;">
+            <div class="child-image1">
+              <img alt="Child Image" src="rst.png">
+              <div class="card-cost">
+                <div data-bind="if: p1MadeCards()[selectedCardIndex1()]">
+                  <input class="number-input" data-bind="value: p1MadeCards()[selectedCardIndex1()].nrg, valueUpdate: 'input', event: { change: saveData }" placeholder="NRG" type="number"/>
+                </div>
+              </div>
+            </div>
+            <div class="child-image2">
+              <img alt="Child Image" src="fireCir.png">
+              <div class="card-power">
+                <div data-bind="if: p1MadeCards()[selectedCardIndex1()]">
+                  <input class="number-input" data-bind="value: p1MadeCards()[selectedCardIndex1()].pwr, valueUpdate: 'input', event: { change: saveData }" placeholder="PWR" type="number"/>
+                </div>
+              </div>
+            </div>
+            <div class="child-3">
+              <!-- <div id="typ">Card <span data-bind="text: $index() + 1"></span> Type:<input class="number-input" data-bind="value: typ, valueUpdate: 'input'" placeholder="TYP" type="number"/><br></div> -->
+              <div data-bind="if: p1MadeCards()[selectedCardIndex1()]">
+                <div class="input3">Energy Type:<input class="number-input" data-bind="value: p1MadeCards()[selectedCardIndex1()].typ, valueUpdate: 'input', event: { change: saveData }" placeholder="TYP" type="number"/></div>
+              </div>
+            </div>
+            <div class="child-4">
+              <!-- <div id="typ">Card <span data-bind="text: $index() + 1"></span> Type:<input class="number-input" data-bind="value: typ, valueUpdate: 'input'" placeholder="TYP" type="number"/><br></div> -->
+              <div data-bind="if: p1MadeCards()[selectedCardIndex1()]">
+                <div class="input3">Card Ability:<input class="number-input" data-bind="value: p1MadeCards()[selectedCardIndex1()].abl, valueUpdate: 'input', event: { change: saveData }" placeholder="ABL" type="number"/></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="cardSelect" id="nextCard1" data-bind="click: increaseCardIndex1">Next Card</button>
+    </div>
+  </div>
+
+  <div id="p2Edit">
+    <div class="container1">
+      <div class="container2">
+        <div class="editDeck">
+          <p class="option">P2 Deck:</p>
+          <div class="titleIn">
+            <p class="label">P2 # of Cards</p>
+            <input class="input" data-bind="value: p2Cards, event: { input: function(data, event) { addCards2(data, event.target.value); } }" type="number" id="numberInput2" placeholder="P2 # of cards">
+          </div>
+          <button class="option" id="deleteB2">Clear P2</button>
+        </div>
+      </div>
+    </div>
+    <div class="container1">
+      <div id="p2DeckHeader">P2 Deck Card <span data-bind="text: selectedCardIndex2() + 1"></span></div>
+    </div>
+    <div class="container1">
+      <button class="cardSelect" id="prevCard2" data-bind="click: decreaseCardIndex2">Previous Card</button>
+      <div class="card-container">
+          <div class="image-wrapper">
+            <img class="card-image" alt="Image 1" src="card3_0.png" id="card-image" style="width: 100%; height: auto;">
+            <div class="child-image1">
+              <img alt="Child Image" src="rst.png">
+              <div class="card-cost">
+                <div data-bind="if: p2MadeCards()[selectedCardIndex2()]">
+                  <input class="number-input" data-bind="value: p2MadeCards()[selectedCardIndex2()].nrg, valueUpdate: 'input', event: { change: saveData }" placeholder="NRG" type="number"/>
+                </div>
+              </div>
+            </div>
+            <div class="child-image2">
+              <img alt="Child Image" src="fireCir.png">
+              <div class="card-power">
+                <div data-bind="if: p2MadeCards()[selectedCardIndex2()]">
+                  <input class="number-input" data-bind="value: p2MadeCards()[selectedCardIndex2()].pwr, valueUpdate: 'input', event: { change: saveData }" placeholder="PWR" type="number"/>
+                </div>
+              </div>
+            </div>
+            <div class="child-3">
+              <!-- <div id="typ">Card <span data-bind="text: $index() + 1"></span> Type:<input class="number-input" data-bind="value: typ, valueUpdate: 'input'" placeholder="TYP" type="number"/><br></div> -->
+              <div data-bind="if: p2MadeCards()[selectedCardIndex2()]">
+                <div class="input3">Energy Type:<input class="number-input" data-bind="value: p2MadeCards()[selectedCardIndex2()].typ, valueUpdate: 'input', event: { change: saveData }" placeholder="TYP" type="number"/></div>
+              </div>
+            </div>
+            <div class="child-4">
+              <!-- <div id="typ">Card <span data-bind="text: $index() + 1"></span> Type:<input class="number-input" data-bind="value: typ, valueUpdate: 'input'" placeholder="TYP" type="number"/><br></div> -->
+              <div data-bind="if: p2MadeCards()[selectedCardIndex2()]">
+                <div class="input3">Card Ability:<input class="number-input" data-bind="value: p2MadeCards()[selectedCardIndex2()].abl, valueUpdate: 'input', event: { change: saveData }" placeholder="ABL" type="number"/></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="cardSelect" id="nextCard2" data-bind="click: increaseCardIndex2">Next Card</button>
+    </div>
+  </div>
+
+  <div id="setEdit">
+    <div class="container1">
+      <div class="container1">
+        <div class="editSet1">
+          <p class="option">Settings:</p>
+          <div id="playToContainer" class="titleIn">
+            <p class="label"># of Pts To Win</p>
+            <input class="input" data-bind="value: ptsNeed, valueUpdate: 'input'" type="number" id="playToInput" placeholder="# of points to win">
+          </div>
+          <div id="turnContainer" class="titleIn">
+            <p class="label"># of Turns</p>
+            <input class="input" data-bind="value: totalTurn, valueUpdate: 'input'" type="number" id="turnInput" placeholder="# of turns">
+          </div>
+          <div id="numTypesContainer" class="titleIn">
+            <p class="label"># of Nrg Types (1-6)</p>
+            <input class="input" data-bind="value: numTypes, valueUpdate: 'input'" type="number" id="numTypesInput" placeholder="# of energy types (1-6)">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container1">
+      <div class="container1">
+        <div class="editSet2">
+          <div class="titleIn">
+            <p class="label">Max # of Cards in Hand</p>
+            <input class="input" type="number" id="numInHand" placeholder="Max # of Cards in Hand">
+          </div>
+          <div class="titleIn">
+            <p class="label"># of Cards Drawn/Turn</p>
+            <input class="input" type="number" id="numDraw" placeholder="# of Cards Drawn/Turn">
+          </div>
+          <button class="option" id="deleteB">Clear Settings</button>
+        </div>
+      </div>
+    </div>
+    <div class="container1">
+      <div class="additional-text">
+        <!-- <button id="energyButton" class="button">energy/turn</button> -->
+        <div id="hiddenContent3" class="hidden-content">
+          <!-- Input fields will be displayed here -->
+        </div>
+        <div id="TurnGame" data-bind="foreach: turn">
+          <div data-bind="foreach: gameEnergy">
+            <div id="EnergyGame">Energy Type <span data-bind="text: $index() + 1"></span> Turn <span data-bind="text: $parentContext.$index() + 1"></span>:<input class="number-input" data-bind="value: energyVal, valueUpdate: 'input'" placeholder="NRG" type="number"/><br></div>  
+          </div>
+          <div id="ActGame">Actions Turn <span data-bind="text: $index() + 1"></span>:<input class="number-input" data-bind="value: act, valueUpdate: 'input'" placeholder="ACT" type="number"/><br></div>
+          <br>
+        </div>
+        <div id="NonTurnGame" data-bind="foreach: turn">
+          <div data-bind="foreach: gameEnergy">
+            <div id="EnergyGame">Energy Type <span data-bind="text: $index() + 1"></span> Turn 1:<input class="number-input" data-bind="value: energyVal, valueUpdate: 'input'" placeholder="NRG" type="number"/><br></div>  
+          </div>
+          <div id="EnergyGame">Energy Increases Per Round:<input class="number-input" data-bind="value: nrgInc, valueUpdate: 'input'" placeholder="NRG" type="number"/><br><br></div>
+          <div id="ActGame">Actions Turn 1:<input class="number-input" data-bind="value: act, valueUpdate: 'input'" placeholder="ACT" type="number"/><br></div>
+          <div id="ActGame">Actions Increases Per Round:<input class="number-input" data-bind="value: actInc, valueUpdate: 'input'" placeholder="ACT" type="number"/><br><br></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
   <div class="container">
-    <div class="top-bar">
+    <!-- <div class="top-bar">
       <div class="leftMost" id="leftMostTop">
         <div class="etin" id="ain">
           <div>
@@ -60,8 +277,7 @@
       <div class="leftMost" id="leftMostCenter">
         <div class="additional-text">
           <p>Abillity 0: No Abillity</p>
-          <div id="hiddenContent0" class="hidden-content">
-            <!-- Hello World messages will be displayed here -->
+          <div id="hiddenContent00" class="hidden-content">
           </div>
           <button class="button" id="caBtn">Clear Abilities</button>
         </div>
@@ -88,9 +304,7 @@
       </div>
       <div class="right">
         <div class="additional-text">
-          <!-- <button id="energyButton" class="button">energy/turn</button> -->
           <div id="hiddenContent3" class="hidden-content">
-            <!-- Input fields will be displayed here -->
           </div>
           <div id="TurnGame" data-bind="foreach: turn">
             <div data-bind="foreach: gameEnergy">
@@ -109,7 +323,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+
+
+    
     <div class="bottom-bar">
       <div class="leftB">
         <div class="etin">
@@ -131,21 +349,32 @@
       <p data-bind="value: warningMessage" class ="warn" id="warn"></p>
     </div>
   </div>
+
+
+
+
+
+
   <!-- Script to toggle content -->
   <script type="module" src="systemSetting.js"></script>
 <script type="module">
   import { ClearEntries } from './saveClear.js';
   import { startTesting, goBack } from './startGame.js';
   import { saveAlwaysVisibleFields } from './visibleFields.js';
-  import { addAbillity, clearABL } from './abillitiesSelector.js'
+  import { addAbillity, clearABL } from './abillitiesSelector.js';
+  import { editABL, editP1, editP2, editSet } from './chooseEdit.js';
   // Wait for DOMContentLoaded event before calling nextRound
   document.addEventListener("DOMContentLoaded", function() {
     // Call nextRound when DOM is fully loaded
     document.getElementById("st").addEventListener("click", startTesting);
     document.getElementById("nr").addEventListener("click", goBack);
     document.getElementById("ce").addEventListener("click", () => ClearEntries('rulesData'));
-    document.getElementById("addABL").addEventListener("click", addAbillity);
-    document.getElementById("caBtn").addEventListener("click", clearABL);
+    document.getElementById("addABLBtn").addEventListener("click", addAbillity);
+    document.getElementById("clrABLBtn").addEventListener("click", clearABL);
+    document.getElementById("ablB").addEventListener("click", editABL);
+    document.getElementById("p1dB").addEventListener("click", editP1);
+    document.getElementById("p2dB").addEventListener("click", editP2);
+    document.getElementById("setB").addEventListener("click", editSet);
     // document.getElementById("ce").addEventListener("click", () => saveAlwaysVisibleFields());
   });
 </script>
