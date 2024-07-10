@@ -58,7 +58,7 @@
           <p class="option">P1 Deck:</p>
           <div class="titleIn">
             <p class="label">P1 # of Cards</p>
-            <input class="input" data-bind="value: p1Cards, event: { input: function(data, event) { addCards1(data, event.target.value); } }" type="number" id="numberInput1" placeholder="P1 # of cards">
+            <input class="input" data-bind="value: p1Cards, event: { input: function(data, event) { addCards1(data, event.target.value); } }, event: { change: saveData }" type="number" id="numberInput1" placeholder="P1 # of cards">
           </div>
           <button class="option" id="deleteB">Clear P1</button>
         </div>
@@ -113,7 +113,7 @@
           <p class="option">P2 Deck:</p>
           <div class="titleIn">
             <p class="label">P2 # of Cards</p>
-            <input class="input" data-bind="value: p2Cards, event: { input: function(data, event) { addCards2(data, event.target.value); } }" type="number" id="numberInput2" placeholder="P2 # of cards">
+            <input class="input" data-bind="value: p2Cards, event: { input: function(data, event) { addCards2(data, event.target.value); } }, event: { change: saveData }" type="number" id="numberInput2" placeholder="P2 # of cards">
           </div>
           <button class="option" id="deleteB2">Clear P2</button>
         </div>

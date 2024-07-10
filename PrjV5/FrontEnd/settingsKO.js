@@ -89,6 +89,10 @@ export function MainViewModel() {
         localStorage.setItem('p2CardData', JSON.stringify(data));
         data = ko.toJS(self.turn);
         localStorage.setItem('turnData', JSON.stringify(data));
+        data = ko.toJS(self.p1Cards);
+        localStorage.setItem('numberInput1', data);
+        data = ko.toJS(self.p2Cards);
+        localStorage.setItem('numberInput2', data);
     };
     self.p1MadeCards = ko.observableArray([]);
     self.p2MadeCards = ko.observableArray([]);
